@@ -1,0 +1,50 @@
+#(praktikum)data transaksi penjualan
+#data terdiri dari:id transaksi,id produk,dan jumlah produk
+#data disimpan dalam list
+#data disimpan dalam tuple
+data_transaksi=[]
+while True:
+    print("\nmenu:")
+    print("1.transaksi penjualan")
+    print("2.id produk")
+    print("3.jumlah product")
+    print("4.hapus transaksi")
+    print("5.keluar")
+    pilihan=input("masukan pilihan anda(1-5):")
+    if pilihan=="1":
+        id_transaksi=input("masukan id transaksi:")
+        transaksi=(id_transaksi,[],[])
+        data_transaksi.append(transaksi)
+        print("transaksi berhasil ditamabahkan")
+    elif pilihan=="2":
+        if not data_transaksi:
+            print("data transaksi anda kosong")
+        else:
+             id_produk = input("masukan ID produk:")
+             #ambil id transaksi trakhir,ubah ,menjadi  list sementara
+        transaksi_trakhir=data_transaksi.pop()
+        id_transaksi,id_produk,jumlah =transaksi_trakhir
+        id_produk.append(id_produk)#  #tamabhkan  produk ke list
+        # Buat tuple baru dan tambahkan kembali ke data_transaksi
+        transaksi_baru = (id_transaksi, id_produk, jumlah)
+        data_transaksi.append(transaksi_baru)
+        print("ID produk berhasil ditambahkan!")
+
+    elif pilihan=="3":
+        if not data_transaksi:
+            print("data transaksi anda kosong")
+        else:
+            jumlah_produk=input("masukan jumlah produk")
+            data_transaksi=["jumlah"].append(jumlah_produk) 
+            print("jumlah produk berhasil ditambahkan ")
+    elif pilihan=="4":
+        if not data_transaksi:
+            print("tidak ada transaksi yang dapat di hapus")
+        else:
+            data_transaksi.pop()
+            print("transaksi berhasl dihapus")
+    elif pilihan == "5":
+         print("keluar dari program")
+         break
+    else:
+        print("pilihan tidak valid,dan silahkan coba lagi")
