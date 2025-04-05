@@ -15,7 +15,7 @@ while True:
         id_transaksi=input("masukan id transaksi:")
         transaksi=(id_transaksi,[],[])
         data_transaksi.append(transaksi)
-        print("transaksi berhasil ditamabahkan")
+        print("transaksi berhasil ditambahkan")
     elif pilihan=="2":
         if not data_transaksi:
             print("data transaksi anda kosong")
